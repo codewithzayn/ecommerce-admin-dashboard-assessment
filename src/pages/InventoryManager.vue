@@ -70,7 +70,7 @@
 
         <!-- Actions Column -->
         <template v-slot:body-cell-actions="props">
-          <q-td :props="props" class="row items-center q-gutter-sm">
+          <q-td :props="props" class="row items-center q-gutter-sm" style='margin-left: 10px'>
             <q-btn icon="edit" flat dense @click="startEdit(props.row)" />
             <q-btn icon="delete" flat dense color="negative" @click="remove(props.row.id)" />
           </q-td>
