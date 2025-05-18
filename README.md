@@ -1,1 +1,1 @@
-# ecommerce-admin-dashboard-assessment
+A responsive E-commerce Admin Dashboard built with Vue.js, Node.js, and AG Grid. It features real-time sales insights, revenue analytics, inventory tracking, and product registration—designed for efficient, data-driven decision-making.
