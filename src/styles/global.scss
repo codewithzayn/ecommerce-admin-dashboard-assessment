@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.v-application {
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+}

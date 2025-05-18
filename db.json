@@ -1,0 +1,110 @@
+{
+  "products": [
+    [
+      {
+        "id": "1",
+        "name": "iPhone 14",
+        "price": 200,
+        "stock": 20,
+        "description": "Latest Apple iPhone 14 with improved camera and performance",
+        "category": "Electronics",
+        "image": "iphone14.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Samsung Galaxy S22",
+        "price": 180,
+        "stock": 15,
+        "description": "Samsung flagship smartphone with AMOLED display",
+        "category": "Electronics",
+        "image": "galaxy_s22.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Men's Leather Jacket",
+        "price": 120,
+        "stock": 10,
+        "description": "Stylish black leather jacket for men",
+        "category": "Fashion",
+        "image": "leather_jacket.jpg"
+      },
+      {
+        "id": "4",
+        "name": "Women's Summer Dress",
+        "price": 45,
+        "stock": 25,
+        "description": "Lightweight floral dress perfect for summer",
+        "category": "Fashion",
+        "image": "summer_dress.jpg"
+      },
+      {
+        "id": "5",
+        "name": "The Great Gatsby",
+        "price": 15,
+        "stock": 50,
+        "description": "Classic novel by F. Scott Fitzgerald",
+        "category": "Books",
+        "image": "great_gatsby.png"
+      },
+      {
+        "id": "6",
+        "name": "Atomic Habits",
+        "price": 20,
+        "stock": 40,
+        "description": "Self-improvement book by James Clear",
+        "category": "Books",
+        "image": "atomic_habits.jpg"
+      },
+      {
+        "id": "7",
+        "name": "Non-stick Cookware Set",
+        "price": 75,
+        "stock": 12,
+        "description": "5-piece non-stick cookware set for everyday cooking",
+        "category": "Home",
+        "image": "cookware_set.png"
+      },
+      {
+        "id": "8",
+        "name": "Memory Foam Pillow",
+        "price": 30,
+        "stock": 30,
+        "description": "Ergonomic memory foam pillow for neck support",
+        "category": "Home",
+        "image": "memory_pillow.jpg"
+      }
+    ],
+    {
+      "id": "b5f2",
+      "name": "Iphone14",
+      "price": 2000,
+      "stock": 200,
+      "description": "Latest Apple iPhone 14 with improved camera and performance",
+      "image": "iphone14.jpg"
+    },
+    {
+      "id": "ab93",
+      "name": "Women's Summer Dress",
+      "price": 50,
+      "stock": 10,
+      "description": "Lightweight floral dress perfect for summer",
+      "image": "summer_dress.jpg"
+    },
+    {
+      "id": "462e",
+      "name": "The Great Gatsby",
+      "price": 15,
+      "stock": 5,
+      "description": "Classic novel by F. Scott Fitzgerald",
+      "image": "great_gatsby.png"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "productId": 1,
+      "quantity": 2,
+      "date": "2024-05-01"
+    }
+  ]
+}
