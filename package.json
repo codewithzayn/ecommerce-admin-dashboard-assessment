@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "vite preview",
-    "build": "vite build",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "lint": "eslint . --fix",
     "dev": "vite",
     "format": "prettier --write src/",
@@ -43,7 +43,8 @@
     "vite": "^4.5.0",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vite-plugin-vuetify": "^1.0.0-alpha.12",
-    "vue-cli-plugin-vuetify": "~2.5.8"
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "@vue/cli-service": "^5.0.0"
   },
   "type": "module"
 }
