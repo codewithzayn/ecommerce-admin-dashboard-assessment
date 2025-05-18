@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useProductStore } from '@/stores/products'
 import { useQuasar } from 'quasar'
 
@@ -59,6 +59,19 @@ const store = useProductStore()
 
 const products = ref([]) // data for ag-grid
 
+onMounted(() => {
+  store.fetch()
+})
+
+// WATCH store.list and sync products.value
+watch(
+  () => store.list,
+  (newList) => {
+    products.value = newList
+  },
+  { immediate: true },
+)
+
 // ag-grid column definitions
 const columnDefs = [
   { headerName: 'Name', field: 'name', sortable: true, filter: true },
@@ -69,8 +82,12 @@ const columnDefs = [
     headerName: 'Image',
     field: 'image',
     cellRenderer: (params) => {
-      if (params.value)
+      if (params.value) {
+        if (params.value.startsWith('data:image')) {
+          return `<img src="${params.value}" style="width:40px; height:40px; object-fit:contain; border-radius: 4px"/>`
+        }
         return `<img src="/images/${params.value}" style="width:40px; height:40px; object-fit:contain; border-radius: 4px"/>`
+      }
       return ''
     },
   },
@@ -89,7 +106,6 @@ const onFile = (files) => {
   }
   file.value = files && files.length ? files[0] : null
 
-  // ✅ Clean file name (replace spaces and extra dots)
   if (file.value) {
     file.value = new File([file.value], file.value.name.replace(/\s+/g, '-').replace(/\.+/g, '.'), {
       type: file.value.type,
@@ -112,25 +128,31 @@ const onSubmit = async () => {
     return
   }
 
-  const prod = {
-    name: name.value,
-    price: price.value,
-    stock: stock.value,
-    description: description.value,
-    image: file.value.name, // ✅ just the file name
+  const reader = new FileReader()
+
+  reader.onload = async () => {
+    const prod = {
+      name: name.value,
+      price: price.value,
+      stock: stock.value,
+      description: description.value,
+      image: reader.result,
+    }
+
+    await store.create(prod)
+    console.log('✅ Product added:', prod)
+    $q.notify({ type: 'positive', message: 'Product added successfully!' })
+
+    // Reset form
+    name.value = ''
+    price.value = 0
+    stock.value = 0
+    description.value = ''
+    file.value = null
+    previewUrl.value = null
   }
 
-  await store.create(prod)
-  console.log('✅ Product added:', prod)
-  $q.notify({ type: 'positive', message: 'Product added successfully!' })
-
-  // Reset form
-  name.value = ''
-  price.value = 0
-  stock.value = 0
-  description.value = ''
-  file.value = null
-  previewUrl.value = null
+  reader.readAsDataURL(file.value)
 }
 </script>
 

@@ -1,29 +1,43 @@
 // src/stores/products.js
 import { defineStore } from 'pinia'
-import axios from 'axios'
+// import axios from 'axios'
 
-const API = 'http://localhost:3000/products'
+// const API = 'http://localhost:3000/products'
 
 export const useProductStore = defineStore('products', {
-  state: () => ({ list: [] }),
+  state: () => ({
+    list: JSON.parse(localStorage.getItem('products') || '[]'),
+  }),
   actions: {
     async fetch() {
-      const res = await axios.get(API)
-      this.list = res.data
+      // Simulate API call
+      this.list = JSON.parse(localStorage.getItem('products') || '[]')
     },
     async create(prod) {
-      const res = await axios.post(API, prod)
-      this.list.push(res.data)
-      return res.data
+      // Simulate backend-generated ID
+      // Generate incremental numeric ID:
+      if (this.list.length === 0) {
+        prod.id = 1
+      } else {
+        // Get max current id and add 1
+        const maxId = Math.max(...this.list.map((p) => p.id))
+        prod.id = maxId + 1
+      }
+
+      this.list.push(prod)
+      localStorage.setItem('products', JSON.stringify(this.list))
+      return prod
     },
     async update(id, upd) {
-      const res = await axios.put(`${API}/${id}`, upd)
       const i = this.list.findIndex((p) => p.id === id)
-      if (i !== -1) this.list.splice(i, 1, res.data)
+      if (i !== -1) {
+        this.list[i] = { ...this.list[i], ...upd }
+        localStorage.setItem('products', JSON.stringify(this.list))
+      }
     },
     async remove(id) {
-      await axios.delete(`${API}/${id}`)
       this.list = this.list.filter((p) => p.id !== id)
+      localStorage.setItem('products', JSON.stringify(this.list))
     },
   },
 })

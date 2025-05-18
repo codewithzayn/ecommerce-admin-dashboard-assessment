@@ -222,11 +222,12 @@ export default {
     const getImageSrc = (img) => {
       if (!img) return ''
       if (img instanceof File) return URL.createObjectURL(img)
-      if (typeof img === 'string' && (img.startsWith('http://') || img.startsWith('https://'))) {
-        return img
+      if (typeof img === 'string') {
+        if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:'))
+          return img
       }
 
-      // Normalize and clean the path
+      // Normalize and clean the path (only for local file names)
       const cleanedPath = img.replace(/\s+/g, '-').replace(/\.+/g, '.')
 
       return `/images/${cleanedPath}`

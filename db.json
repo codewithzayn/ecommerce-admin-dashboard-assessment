@@ -75,28 +75,36 @@
       }
     ],
     {
-      "id": "b5f2",
-      "name": "Iphone14",
-      "price": 2000,
-      "stock": 200,
-      "description": "Latest Apple iPhone 14 with improved camera and performance",
-      "image": "iphone14.jpg"
-    },
-    {
       "id": "ab93",
       "name": "Women's Summer Dress",
-      "price": 50,
+      "price": 25,
       "stock": 10,
       "description": "Lightweight floral dress perfect for summer",
       "image": "summer_dress.jpg"
     },
     {
-      "id": "462e",
-      "name": "The Great Gatsby",
-      "price": 15,
-      "stock": 5,
-      "description": "Classic novel by F. Scott Fitzgerald",
-      "image": "great_gatsby.png"
+      "id": "f39a",
+      "name": "Women's Summer Dress",
+      "price": 15.5,
+      "stock": 200,
+      "description": "Lightweight floral dress perfect for summer",
+      "image": "summer_dress.jpg"
+    },
+    {
+      "id": "1643",
+      "name": "Men's Leather Jacket",
+      "price": 50,
+      "stock": 25,
+      "description": "Stylish black leather jacket for men",
+      "image": "leather_jacket.jpg"
+    },
+    {
+      "id": "6053",
+      "name": "wool jacket",
+      "price": 2000,
+      "stock": 200,
+      "description": "Wool custom jacket for men.",
+      "image": "wool-jacket.avif"
     }
   ],
   "orders": [
