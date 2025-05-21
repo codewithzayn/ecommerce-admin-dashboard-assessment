@@ -118,9 +118,9 @@ const onFile = (files) => {
 
 const onSubmit = async () => {
   const missing = []
-  if (!name.value) missing.push('Name')
-  if (!price.value) missing.push('Price')
-  if (!stock.value) missing.push('Stock')
+  if (!name.value.trim()) missing.push('Name')
+  if (price.value === null || isNaN(price.value) || price.value <= 0) missing.push('Valid Price')
+  if (stock.value === null || isNaN(stock.value) || stock.value < 0) missing.push('Valid Stock')
   if (!file.value) missing.push('Image')
 
   if (missing.length) {

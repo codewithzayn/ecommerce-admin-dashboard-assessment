@@ -75,7 +75,7 @@
       }
     ],
     {
-      "id": "ab93",
+      "id": "9",
       "name": "Women's Summer Dress",
       "price": 25,
       "stock": 10,
@@ -83,7 +83,7 @@
       "image": "summer_dress.jpg"
     },
     {
-      "id": "f39a",
+      "id": "10",
       "name": "Women's Summer Dress",
       "price": 15.5,
       "stock": 200,
@@ -91,7 +91,7 @@
       "image": "summer_dress.jpg"
     },
     {
-      "id": "1643",
+      "id": "11",
       "name": "Men's Leather Jacket",
       "price": 50,
       "stock": 25,
@@ -99,12 +99,20 @@
       "image": "leather_jacket.jpg"
     },
     {
-      "id": "6053",
+      "id": "12",
       "name": "wool jacket",
       "price": 2000,
       "stock": 200,
       "description": "Wool custom jacket for men.",
       "image": "wool-jacket.avif"
+    },
+    {
+      "id": "13",
+      "name": "samsung 21",
+      "price": 21000,
+      "stock": 20,
+      "description": "samsung 21",
+      "image": "Samsung-Galaxy-S21-Plus.png"
     }
   ],
   "orders": [
